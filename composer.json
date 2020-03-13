@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Selen\\Measurement": "src"
+            "Selen\\Measurement\\": "src"
         }
     }
 }
