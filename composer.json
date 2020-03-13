@@ -1,0 +1,22 @@
+{
+    "name": "hazuki3417/php-measurement",
+    "description": "Package for measuring code execution speed",
+    "type": "library",
+    "keywords": ["measurement", "performance", "stopwatch"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "takashi kudo",
+            "email": "hazuki3417@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Selen\\Measurement": "src"
+        }
+    }
+}
