@@ -2,7 +2,7 @@ version: "3.0"
 
 services:
   web:
-    hostname: php-measurement
+    hostname:  php-measurement
     image: hazuki3417/ubuntu_nginx_php:latest
     container_name: php-measurement
     environment:
