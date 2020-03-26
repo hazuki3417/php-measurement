@@ -1,10 +1,25 @@
 <?php
-include dirname(__DIR__) . '/src/Selen/Measurement/Performance.php';
+include dirname(__DIR__) . '/src/Performance.php';
 
 use Selen\Measurement\Performance;
 
-$perf = new Performance();
+$perf1 = new Performance();
 
-$perf->set(function () {
-    $hoge = 1;
+$perf1->set(function () {
+    $sum = '1';
+    $result = 0;
+    for($i = 1; $i < 10000; $i++){
+        $result += $sum;
+    }
+})->start(8);
+
+
+$perf2 = new Performance();
+
+$perf2->set(function () {
+    $sum = 1;
+    $result = 0;
+    for($i = 1; $i < 10000; $i++){
+        $result += $sum;
+    }
 })->start(8);
