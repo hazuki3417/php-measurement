@@ -1,12 +1,16 @@
 
 ![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement)
 
-# 概要
+# Overview（概要）
 
-このパッケージはプログラムのパフォーマンスを計測することが出来ます。
-このパッケージを用いることで負荷テスト、処理速度の検証を簡易的に行うことが出来ます。
+このパッケージはPHPプログラムの実行速度をチェックします。
+このパッケージを用いることでリファクタリングなどの作業を支援します。
 
-## インストール
+## Requirement（要件）
+ - php 5.6以上
+ 
+
+## Install（インストール）
 
 パッケージをインストールするには、ターミナルから下記のコマンドを実行します。
 
@@ -17,13 +21,15 @@ composer require --dev hazuki3417/php-measurement
 ※開発支援用のパッケージですので、`--dev`オプションを付与してインストールすることを推奨します。
 
 
-## 使い方
+## Usage（使い方）
 
 ### 1.インスタンスを生成
 `use`演算子を利用して`Performance`クラスのエイリアスを作成し、インスタンスを生成します。
 （それか名前空間を指定して`Performance`クラスのインスタンスを生成します。）
 
 ```php
+include 'vendor/autoload.php';
+
 // Performanceクラスのエイリアスを作成
 use Selen\Measurement\Performance;
 
@@ -33,6 +39,8 @@ $perf = new Performance();
 ```
 
 ```php
+include 'vendor/autoload.php';
+
 // 名前空間を指定してインスタンスを生成
 $perf = Selen\Measurement\Performance();
 
@@ -41,6 +49,8 @@ $perf = Selen\Measurement\Performance();
 ### 2.計測
 
 ```php
+include 'vendor/autoload.php';
+
 use Selen\Measurement\Performance;
 
 $perf1 = new Performance();
@@ -75,3 +85,11 @@ $perf1->set(function () {
 ## その他情報
 
 コーディング規約:PSR2
+
+
+## Licence
+[MIT](https://github.com/hazuki3417/php-measurement/blob/master/LICENSE)
+
+## Author
+
+[hazuki3417](https://github.com/hazuki3417)
