@@ -1,93 +1,94 @@
+! [license] (https://img.shields.io/github/license/hazuki3417/php-measurement)! [version] (https://img.shields.io/packagist/php-v/hazuki3417/php- measurement)
 
-![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement)
+[English](README.md) | [日本語](README.ja.md)
 
-# Overview（概要）
+# Overview
 
-このパッケージはPHPプログラムの実行速度をチェックします。
-このパッケージを用いることでリファクタリングなどの作業を支援します。
+This package checks the execution speed of PHP programs.
+Use this package to support tasks such as refactoring.
 
-## Requirement（要件）
- - php 5.6以上
- 
+## Requirement
+- php 5.6 or higher
+ 
 
-## Install（インストール）
+## Install
 
-パッケージをインストールするには、ターミナルから下記のコマンドを実行します。
+To install the package, execute the following command from the terminal.
 
 ```sh
-composer require --dev hazuki3417/php-measurement
+composer require --dev hazuki3417 / php-measurement
 ```
 
-※開発支援用のパッケージですので、`--dev`オプションを付与してインストールすることを推奨します。
+Since it is a package for development support, it is recommended to install it with the `--dev` option.
 
 
-## Usage（使い方）
+## Usage
 
-### 1.インスタンスを生成
-`use`演算子を利用して`Performance`クラスのエイリアスを作成し、インスタンスを生成します。
-（それか名前空間を指定して`Performance`クラスのインスタンスを生成します。）
+### 1. Create instance
+Create an instance of the `Performance` class using the` use` operator and create an instance.  
+(Or specify a namespace and create an instance of the `Performance` class.)
 
 ```php
-include 'vendor/autoload.php';
+include 'vendor / autoload.php';
 
-// Performanceクラスのエイリアスを作成
-use Selen\Measurement\Performance;
+// Create an alias for the Performance class
+use Selen \ Measurement \ Performance;
 
-// インスタンスを生成
-$perf = new Performance();
+// Create instance
+$ perf = new Performance ();
 
 ```
 
 ```php
-include 'vendor/autoload.php';
+include 'vendor / autoload.php';
 
-// 名前空間を指定してインスタンスを生成
-$perf = Selen\Measurement\Performance();
+// Create instance by specifying namespace
+$ perf = Selen \ Measurement \ Performance ();
 
 ```
 
-### 2.計測
+### 2.Measurement
 
 ```php
-include 'vendor/autoload.php';
+include 'vendor / autoload.php';
 
-use Selen\Measurement\Performance;
+use Selen \ Measurement \ Performance;
 
-$perf1 = new Performance();
+$ perf1 = new Performance ();
 
-$perf1->set(function () {
-    $sum = '1';
-    $result = 0;
-    for($i = 1; $i < 10000; $i++){
-        $result += $sum;
-    }
-})->start(8);
+$ perf1-> set (function () {
+    $ sum = '1';
+    $ result = 0;
+    for ($ i = 1; $ i <10000; $ i ++) {
+        $ result + = $ sum;
+    }
+})-> start (8);
 ```
 
 
-## 出力結果
+## Output result
 
 ![performance](docs/images/performance.png)
 
 
-|列|説明|単位|
-|---|---|---|
-|process(1)[s]|1回あたりの実行時間|秒|
-|process(t[s]|累計の実行時間|秒||
-|process(1)[MB]|1回あたりのメモリ使用量|メガバイト|
-|process(1)[MB]|累計のメモリ使用量|メガバイト|
+| Column | description | unit |
+| --- | --- | --- |
+| process (1) [s] | Execution time per run | sec |
+| process (t [s] | Total execution time | sec ||
+| process (1) [MB] | Memory usage per time | Megabyte |
+| process (1) [MB] | Total memory usage | megabytes |
 
-|行|説明|
-|---|---|
-|process:~|1回あたりの結果値|
-|average|実行回数の平均値|
+| Row | description |
+| --- | --- |
+| process: ~ | Result value per time |
+| average | Average number of executions |
 
-## その他情報
+## Other information
 
-コーディング規約:PSR2
+Coding convention: PSR2
 
 
-## Licence
+## License
 [MIT](https://github.com/hazuki3417/php-measurement/blob/master/LICENSE)
 
 ## Author
