@@ -1,5 +1,7 @@
 ![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement)
 
+[English](README.md) | [日本語](README.ja.md)
+
 # Overview（概要）
 
 このパッケージはPHPプログラムの実行速度をチェックします。
