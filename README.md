@@ -16,7 +16,7 @@ Use this package to support tasks such as refactoring.
 To install the package, execute the following command from the terminal.
 
 ```sh
-composer require --dev hazuki3417 / php-measurement
+composer require --dev hazuki3417/php-measurement
 ```
 
 Since it is a package for development support, it is recommended to install it with the `--dev` option.
@@ -29,40 +29,40 @@ Create an instance of the `Performance` class using the` use` operator and creat
 (Or specify a namespace and create an instance of the `Performance` class.)
 
 ```php
-include 'vendor / autoload.php';
+include 'vendor/autoload.php';
 
 // Create an alias for the Performance class
-use Selen \ Measurement \ Performance;
+use Selen\Measurement\Performance;
 
 // Create instance
-$ perf = new Performance ();
+$perf = new Performance();
 
 ```
 
 ```php
-include 'vendor / autoload.php';
+include 'vendor/autoload.php';
 
 // Create instance by specifying namespace
-$ perf = Selen \ Measurement \ Performance ();
+$perf = Selen\Measurement\Performance();
 
 ```
 
 ### 2.Measurement
 
 ```php
-include 'vendor / autoload.php';
+include 'vendor/autoload.php';
 
-use Selen \ Measurement \ Performance;
+use Selen\Measurement\Performance;
 
-$ perf1 = new Performance ();
+$perf1 = new Performance();
 
-$ perf1-> set (function () {
-    $ sum = '1';
-    $ result = 0;
-    for ($ i = 1; $ i <10000; $ i ++) {
-        $ result + = $ sum;
-    }
-})-> start (8);
+$perf1->set(function () {
+    $sum = '1';
+    $result = 0;
+    for($i = 1; $i < 10000; $i++){
+        $result += $sum;
+    }
+})->start(8);
 ```
 
 
