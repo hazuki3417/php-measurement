@@ -42,9 +42,6 @@ class QueueTest extends TestCase
      */
     public function testQueue()
     {
-        $nowMemory = $this->nowMemory();
-        $nowTime   = $this->nowTime();
-
         $record1 = new Record($this->nowMemory(), $this->nowTime());
         $record2 = new Record($this->nowMemory(), $this->nowTime());
         $record3 = new Record($this->nowMemory(), $this->nowTime());
@@ -73,6 +70,19 @@ class QueueTest extends TestCase
 
         $this->assertEquals($queue->clear(), null);
         $this->assertEquals($queue->size(), 0);
+    }
+
+    /**
+     * @covers Queue::dequeue
+     * @expectedException RuntimeException
+     * @return void
+     */
+    public function testQueueException()
+    {
+        $queue = new Queue();
+
+        // キューが1件も存在しないときのテスト
+        $queue->dequeue();
     }
 
     /**
