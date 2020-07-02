@@ -34,10 +34,10 @@ class QueueTest extends TestCase
     }
 
     /**
-     * @covers Record::enqueue
-     * @covers Record::dequeue
-     * @covers Record::size
-     * @covers Record::clear
+     * @covers Queue::enqueue
+     * @covers Queue::dequeue
+     * @covers Queue::size
+     * @covers Queue::clear
      * @return void
      */
     public function testQueue()
