@@ -11,7 +11,7 @@ use RuntimeException;
 use Selen\Measurement\State;
 use Selen\Measurement\Output;
 use Selen\Measurement\Record;
-use Selen\Measurement\Records;
+use Selen\Measurement\Queue;
 /**
  * メモリ使用量、実行時間を計測するクラス
  */
@@ -23,9 +23,9 @@ class Stopwatch
     private $state = null;
 
     /**
-     * @var Records インスタンスを保持する変数
+     * @var Queue インスタンスを保持する変数
      */
-    private $records = null;
+    private $queue = null;
 
     /**
      * コンストラクタ
@@ -33,14 +33,14 @@ class Stopwatch
     public function __construct()
     {
         $this->state = new State();
-        $this->records = new Records();
+        $this->queue = new Queue();
         $this->init();
     }
 
     private function init()
     {
         $this->state->stop();
-        $this->records->clear();
+        $this->queue->clear();
     }
 
     public function start()
@@ -67,7 +67,7 @@ class Stopwatch
 
     public function output()
     {
-        $output = new Output($this->records);
+        $output = new Output($this->queue);
         $output->echo();
     }
     
@@ -75,7 +75,7 @@ class Stopwatch
     private function addRecord()
     {
         $record = new Record($this->nowMemory(), $this->nowTime());
-        $this->records->push($record);
+        $this->queue->enqueue($record);
     }
 
     /**
