@@ -9,7 +9,7 @@
  * @group Stopwatch
  * @group Queue
  */
-namespace Selen\Measurement;
+namespace Selen\Measurement\Test;
 
 use PHPUnit\Framework\TestCase;
 use Selen\Measurement\Queue;
