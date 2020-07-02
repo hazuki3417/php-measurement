@@ -20,8 +20,8 @@ class Record
 
     /**
      * コンストラクタ
-     * @param int $memory
-     * @param float $time
+     * @param int $memory メモリ量を渡します。
+     * @param float $time 実行時間を渡します。
      */
     public function __construct($memory, $time)
     {
