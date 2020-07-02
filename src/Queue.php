@@ -11,7 +11,7 @@ use Selen\Measurement\Record;
 /**
  * メモリ使用量、実行時間をスタックするクラス
  */
-class Records
+class Queue
 {
     /**
      * @var Record メモリ使用量、実行時間を保持する配列
@@ -23,7 +23,7 @@ class Records
      * @param Record 
      * @return void
      */
-    public function push(Record $record)
+    public function enqueue(Record $record)
     {
         $this->stack[] = $record;
     }
@@ -32,7 +32,7 @@ class Records
      * レコードを1件取得します。
      * @return Record
      */
-    public function pop()
+    public function dequeue()
     {
         $tmp = array_shift($this->stack);
         if($tmp === null){
