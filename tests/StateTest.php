@@ -33,10 +33,9 @@ class StateTest extends TestCase
     }
 
     /**
-     * @covers Record::enqueue
-     * @covers Record::dequeue
-     * @covers Record::size
-     * @covers Record::clear
+     * @covers State::get
+     * @covers State::run
+     * @covers State::stop
      * @return void
      */
     public function testState()
