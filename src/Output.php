@@ -7,7 +7,7 @@
  */
 namespace Selen\Measurement;
 
-use Selen\Measurement\Records;
+use Selen\Measurement\Queue;
 /**
  * 
  */
@@ -35,16 +35,16 @@ class Output
     private $new_line = "\n";
 
     /**
-     * @var Records インスタンスを保持する変数
+     * @var Queue インスタンスを保持する変数
      */
-    private $records = null;
+    private $queue = null;
 
     /**
      * コンストラクタ
      */
-    public function __construct(Records $records)
+    public function __construct(Queue $queue)
     {
-        $this->records = $records;
+        $this->queue = $queue;
     }
     
     public function outputType($type)
@@ -79,16 +79,16 @@ class Output
         );
 
         // 最初の記録は基準値として利用するため先に取得
-        $record = $this->records->pop();
+        $record = $this->queue->dequeue();
         $base_time   = $record->getTime();
         $base_memory = $record->getMemory();
         $prev_time   = $base_time;
         $prev_memory = $base_memory;
 
         // 2つ目から基準値との差分を出力する
-        $count = $this->records->size();
+        $count = $this->queue->size();
         for($i = 0; $i < $count; $i++){
-            $record        = $this->records->pop();
+            $record        = $this->queue->dequeue();
 
             $target_time   = $record->getTime();
             $target_memory = $record->getMemory();

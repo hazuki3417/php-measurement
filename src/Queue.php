@@ -3,18 +3,18 @@
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
- * @package Selen
+ * @package Selen\Measurement
  */
 namespace Selen\Measurement;
 
 use Selen\Measurement\Record;
 /**
- * メモリ使用量、実行時間をスタックするクラス
+ * Recordクラスのデータを管理するクラス
  */
 class Queue
 {
     /**
-     * @var Record メモリ使用量、実行時間を保持する配列
+     * @var Record Recordクラスを保持する配列
      */
     private $stack = [];
 
