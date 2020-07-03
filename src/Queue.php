@@ -19,8 +19,8 @@ class Queue
     private $queues = [];
 
     /**
-     * レコードを1件追加します。
-     * @param Record 
+     * キューを1件追加します。
+     * @param Record 追加するキューを渡します。
      * @return void
      */
     public function enqueue(Record $record)
@@ -29,8 +29,8 @@ class Queue
     }
 
     /**
-     * レコードを1件取得します。
-     * @return Record
+     * キューを1件取り出します。
+     * @return Record キューを返します。
      */
     public function dequeue()
     {
@@ -41,13 +41,17 @@ class Queue
         return $record;
     }
 
+    /**
+     * 保持しているキューの件数を取得します。
+     * @return int 保持しているキューの件数を返します。
+     */
     public function size()
     {
         return count($this->queues);
     }
 
     /**
-     * 保持したレコードキャッシュを破棄します。
+     * 保持しているキューをすべて破棄します。
      * @return void
      */
     public function clear()

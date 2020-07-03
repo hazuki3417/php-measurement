@@ -9,7 +9,7 @@ namespace Selen\Measurement;
 
 use \Selen\Measurement\Queue;
 /**
- * 
+ * 計測結果を出力するクラス
  */
 class Output
 {
@@ -66,7 +66,10 @@ class Output
         }
     }
 
-
+    /**
+     * 計測結果を出力します。
+     * @return void
+     */
     public function echo()
     {
         echo $this->new_line;

@@ -35,6 +35,18 @@ class StopwatchTest extends TestCase
     }
 
     /**
+     * @covers ::lap
+     * @expectedException RuntimeException
+     * @return void
+     */
+    public function testException()
+    {
+        $stopwatch = new Stopwatch();
+        $stopwatch->lap();
+    }
+    
+    /**
+     * @covers ::__construct
      * @covers ::init
      * @covers ::start
      * @covers ::lap

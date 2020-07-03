@@ -7,7 +7,6 @@
  */
 namespace Selen\Measurement;
 
-use RuntimeException;
 use Selen\Measurement\State;
 use Selen\Measurement\Output;
 use Selen\Measurement\Record;
@@ -37,12 +36,20 @@ class Stopwatch
         $this->init();
     }
 
+    /**
+     * Stopwatchの内部情報を初期化します。
+     * @return void
+     */
     private function init()
     {
         $this->state->stop();
         $this->queue->clear();
     }
 
+    /**
+     * 計測を開始します。
+     * @return void
+     */
     public function start()
     {
         $this->state->run();
@@ -50,21 +57,34 @@ class Stopwatch
         $this->addRecord();
     }
 
+    /**
+     * 途中結果を記録します。
+     * @return void
+     * @throws RuntimeException 計測していないときに実行したときに発生します。
+     */
     public function lap()
     {
         if(!$this->state->get()){
             // 計測終了中ならエラーメッセージを出力する
-            throw new RuntimeException('計測中に実行してください。');
+            throw new \RuntimeException('計測中に実行してください。');
         }
         $this->addRecord();
     }
 
+    /**
+     * 計測を終了します。
+     * @return void
+     */
     public function stop()
     {
         $this->addRecord();
         $this->state->stop();
     }
 
+    /**
+     * 計測記録を出力します。
+     * @return void
+     */
     public function output()
     {
         $output = new Output($this->queue);
@@ -72,6 +92,10 @@ class Stopwatch
     }
     
 
+    /**
+     * 計測記録を追加します。
+     * @return void
+     */
     private function addRecord()
     {
         $record = new Record($this->nowMemory(), $this->nowTime());
