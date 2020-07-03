@@ -60,6 +60,8 @@ class RecordTest extends TestCase
      * @covers Selen\Measurement\Record::__construct
      * @covers Selen\Measurement\Record::setMemory
      * @covers Selen\Measurement\Record::setTime
+     * @covers Selen\Measurement\Record::getMemory
+     * @covers Selen\Measurement\Record::getTime
      * @return void
      */
     public function testConstruct()
