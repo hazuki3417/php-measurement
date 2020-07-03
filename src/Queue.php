@@ -16,7 +16,7 @@ class Queue
     /**
      * @var Record Recordクラスを保持する配列
      */
-    private $stack = [];
+    private $queues = [];
 
     /**
      * レコードを1件追加します。
@@ -25,7 +25,7 @@ class Queue
      */
     public function enqueue(Record $record)
     {
-        $this->stack[] = $record;
+        $this->queues[] = $record;
     }
 
     /**
@@ -34,16 +34,16 @@ class Queue
      */
     public function dequeue()
     {
-        $tmp = array_shift($this->stack);
-        if($tmp === null){
+        $record = array_shift($this->queues);
+        if($record === null){
             throw new \RuntimeException('popできません');
         }
-        return $tmp;
+        return $record;
     }
 
     public function size()
     {
-        return count($this->stack);
+        return count($this->queues);
     }
 
     /**
@@ -52,6 +52,6 @@ class Queue
      */
     public function clear()
     {
-        $this->stack = [];
+        $this->queues = [];
     }
 }
