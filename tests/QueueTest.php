@@ -11,9 +11,9 @@
  */
 namespace Selen\Measurement\Test;
 
-use PHPUnit\Framework\TestCase;
-use Selen\Measurement\Queue;
-use Selen\Measurement\Record;
+use \PHPUnit\Framework\TestCase;
+use \Selen\Measurement\Queue;
+use \Selen\Measurement\Record;
 
 class QueueTest extends TestCase
 {
@@ -34,10 +34,10 @@ class QueueTest extends TestCase
     }
 
     /**
-     * @covers Queue::enqueue
-     * @covers Queue::dequeue
-     * @covers Queue::size
-     * @covers Queue::clear
+     * @covers Selen\Measurement\Queue::enqueue
+     * @covers Selen\Measurement\Queue::dequeue
+     * @covers Selen\Measurement\Queue::size
+     * @covers Selen\Measurement\Queue::clear
      * @return void
      */
     public function testQueue()
@@ -73,7 +73,7 @@ class QueueTest extends TestCase
     }
 
     /**
-     * @covers Queue::dequeue
+     * @covers Selen\Measurement\Queue::dequeue
      * @expectedException RuntimeException
      * @return void
      */

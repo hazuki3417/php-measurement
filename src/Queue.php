@@ -7,7 +7,7 @@
  */
 namespace Selen\Measurement;
 
-use Selen\Measurement\Record;
+use \Selen\Measurement\Record;
 /**
  * Recordクラスのデータを管理するクラス
  */

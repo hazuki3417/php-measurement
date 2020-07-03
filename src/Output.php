@@ -7,7 +7,7 @@
  */
 namespace Selen\Measurement;
 
-use Selen\Measurement\Queue;
+use \Selen\Measurement\Queue;
 /**
  * 
  */

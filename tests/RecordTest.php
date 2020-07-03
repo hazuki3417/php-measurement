@@ -11,8 +11,8 @@
  */
 namespace Selen\Measurement\Test;
 
-use PHPUnit\Framework\TestCase;
-use Selen\Measurement\Record;
+use \PHPUnit\Framework\TestCase;
+use \Selen\Measurement\Record;
 
 class RecordTest extends TestCase
 {
@@ -33,9 +33,9 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Record::__construct
-     * @covers Record::setMemory
-     * @covers Record::setTime
+     * @covers Selen\Measurement\Record::__construct
+     * @covers Selen\Measurement\Record::setMemory
+     * @covers Selen\Measurement\Record::setTime
      * @expectedException InvalidArgumentException
      * @return void
      */
@@ -45,9 +45,9 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Record::__construct
-     * @covers Record::setMemory
-     * @covers Record::setTime
+     * @covers Selen\Measurement\Record::__construct
+     * @covers Selen\Measurement\Record::setMemory
+     * @covers Selen\Measurement\Record::setTime
      * @expectedException InvalidArgumentException
      * @return void
      */
@@ -57,9 +57,9 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Record::__construct
-     * @covers Record::setMemory
-     * @covers Record::setTime
+     * @covers Selen\Measurement\Record::__construct
+     * @covers Selen\Measurement\Record::setMemory
+     * @covers Selen\Measurement\Record::setTime
      * @return void
      */
     public function testConstruct()
