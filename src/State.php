@@ -12,7 +12,7 @@ namespace Selen\Measurement;
 class State
 {
     /**
-     * @var Record メモリ使用量、実行時間を保持する配列
+     * @var bool メモリ使用量、実行時間を保持する配列
      */
     private $state_flg = false;
 
