@@ -15,6 +15,9 @@ use \PHPUnit\Framework\TestCase;
 use \Selen\Measurement\Queue;
 use \Selen\Measurement\Record;
 
+/**
+ * @coversDefaultClass \Selen\Measurement\Queue
+ */
 class QueueTest extends TestCase
 {
     /**
@@ -34,10 +37,10 @@ class QueueTest extends TestCase
     }
 
     /**
-     * @covers Selen\Measurement\Queue::enqueue
-     * @covers Selen\Measurement\Queue::dequeue
-     * @covers Selen\Measurement\Queue::size
-     * @covers Selen\Measurement\Queue::clear
+     * @covers ::enqueue
+     * @covers ::dequeue
+     * @covers ::size
+     * @covers ::clear
      * @return void
      */
     public function testQueue()
@@ -73,7 +76,7 @@ class QueueTest extends TestCase
     }
 
     /**
-     * @covers Selen\Measurement\Queue::dequeue
+     * @covers ::dequeue
      * @expectedException RuntimeException
      * @return void
      */

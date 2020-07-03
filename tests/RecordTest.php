@@ -14,6 +14,9 @@ namespace Selen\Measurement\Test;
 use \PHPUnit\Framework\TestCase;
 use \Selen\Measurement\Record;
 
+/**
+ * @coversDefaultClass \Selen\Measurement\Record
+ */
 class RecordTest extends TestCase
 {
     /**
@@ -33,9 +36,9 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Selen\Measurement\Record::__construct
-     * @covers Selen\Measurement\Record::setMemory
-     * @covers Selen\Measurement\Record::setTime
+     * @covers ::__construct
+     * @covers ::setMemory
+     * @covers ::setTime
      * @expectedException InvalidArgumentException
      * @return void
      */
@@ -45,9 +48,9 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Selen\Measurement\Record::__construct
-     * @covers Selen\Measurement\Record::setMemory
-     * @covers Selen\Measurement\Record::setTime
+     * @covers ::__construct
+     * @covers ::setMemory
+     * @covers ::setTime
      * @expectedException InvalidArgumentException
      * @return void
      */
@@ -57,11 +60,11 @@ class RecordTest extends TestCase
     }
 
     /**
-     * @covers Selen\Measurement\Record::__construct
-     * @covers Selen\Measurement\Record::setMemory
-     * @covers Selen\Measurement\Record::setTime
-     * @covers Selen\Measurement\Record::getMemory
-     * @covers Selen\Measurement\Record::getTime
+     * @covers ::__construct
+     * @covers ::setMemory
+     * @covers ::setTime
+     * @covers ::getMemory
+     * @covers ::getTime
      * @return void
      */
     public function testConstruct()

@@ -14,6 +14,9 @@ namespace Selen\Measurement\Test;
 use \PHPUnit\Framework\TestCase;
 use \Selen\Measurement\State;
 
+/**
+ * @coversDefaultClass \Selen\Measurement\State
+ */
 class StateTest extends TestCase
 {
     /**
@@ -33,9 +36,9 @@ class StateTest extends TestCase
     }
 
     /**
-     * @covers \Selen\Measurement\State::get
-     * @covers \Selen\Measurement\State::run
-     * @covers \Selen\Measurement\State::stop
+     * @covers ::get
+     * @covers ::run
+     * @covers ::stop
      * @return void
      */
     public function testState()
