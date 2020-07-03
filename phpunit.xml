@@ -4,7 +4,7 @@
         bootstrap="vendor/autoload.php"
         backupGlobals="false"
         beStrictAboutCoversAnnotation="false"
-        beStrictAboutOutputDuringTests="true"
+        beStrictAboutOutputDuringTests="false"
         beStrictAboutTestsThatDoNotTestAnything="true"
         beStrictAboutTodoAnnotatedTests="true"
         colors="true"

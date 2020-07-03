@@ -69,6 +69,7 @@ class Output
 
     public function echo()
     {
+        echo $this->new_line;
         echo sprintf(
             self::MESSAGE_FORMAT_HEADER . $this->new_line,
             '',
