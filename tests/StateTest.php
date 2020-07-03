@@ -12,7 +12,7 @@
 namespace Selen\Measurement\Test;
 
 use \PHPUnit\Framework\TestCase;
-use \Selen\Measurement\State;
+use \Selen\Measurement\State as State;
 
 class StateTest extends TestCase
 {
