@@ -7,6 +7,7 @@
  */
 namespace Selen\Measurement;
 
+use Exception;
 use \Selen\Measurement\Queue;
 /**
  * 計測結果を出力するクラス
@@ -41,12 +42,19 @@ class Output
 
     /**
      * コンストラクタ
+     * @param Queue $queue
      */
     public function __construct(Queue $queue)
     {
         $this->queue = $queue;
     }
     
+    /**
+     * 計測結果の出力形式を指定します。
+     * @param string $type
+     * @return void
+     * @throws InvalidArgumentException 対応していない出力形式を指定したときに発生します。
+     */
     public function outputType($type)
     {
         switch($type){
@@ -62,7 +70,7 @@ class Output
             //     ini_set('error_log', self::PHP_ERROR_LOG_PATH);
             //     break;
             default:
-                throw new InvalidArgumentException('The value is incorrect. $type');
+                throw new \InvalidArgumentException('The value is incorrect. $type');
         }
     }
 
@@ -83,7 +91,13 @@ class Output
         );
 
         // 最初の記録は基準値として利用するため先に取得
-        $record = $this->queue->dequeue();
+        $record = null;
+        try{
+            $record = $this->queue->dequeue();
+        } catch(Exception $e){
+            return;
+        }
+
         $base_time   = $record->getTime();
         $base_memory = $record->getMemory();
         $prev_time   = $base_time;
