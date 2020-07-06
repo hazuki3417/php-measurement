@@ -38,6 +38,10 @@ class PerformanceTest extends TestCase
      * @covers ::__construct
      * @covers ::set
      * @covers ::start
+     * @covers ::init
+     * @covers ::addRecord
+     * @covers ::nowMemory
+     * @covers ::nowTime
      * @return void
      */
     public function testPerformance()
