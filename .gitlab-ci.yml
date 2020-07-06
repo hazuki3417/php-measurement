@@ -1,5 +1,5 @@
 # Runnerとして利用するDockerコンテナイメージを指定
-image: hazuki3417/ubuntu_nginx_php:latest
+image: php:5.6-cli
 
 # job間で共有するディレクトリを指定する
 cache:
