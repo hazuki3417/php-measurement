@@ -1,5 +1,5 @@
 <?php
-include dirname(__DIR__) . '/src/Performance.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 use Selen\Measurement\Performance;
 
