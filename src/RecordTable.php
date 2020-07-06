@@ -7,28 +7,18 @@
  */
 namespace Selen\Measurement;
 
-use Exception;
 use \Selen\Measurement\Queue;
 /**
  * 計測結果を出力するクラス
  */
 class RecordTable
 {
-    // const PHP_ERROR_LOG_PATH = '/var/log/nginx/errors.log';
-    
     const OUTPUT_TYPE_HTML     = 'html';
     const OUTPUT_TYPE_LOG      = 'log';
     const OUTPUT_TYPE_TERMINAL = 'terminal';
 
-    // const FORMAT_START  = 'message (start) : start of measurement';
-    // const FORMAT_LAP    = 'message (%s)    : %s';
-    // const FORMAT_END    = 'message (end)   : end of measurement';
-    // const FORMAT_MEMORY = 'memory usage    : lap %.3f [MB] split %.3f [MB]';
-    // const FORMAT_TIME   = 'process time    : lap %.3f [s]  split %.3f [s]';
-
     const MESSAGE_FORMAT_HEADER = '| %-12s | %16s | %16s | %14s | %14s |';
     const MESSAGE_FORMAT_RESULT = '| %-12s | %16.12f | %16.12f | %14.3f | %14.3f |';
-
 
     /**
      * @var string 改行コードを保持する変数
@@ -80,7 +70,7 @@ class RecordTable
      */
     public function create()
     {
-        $records = [];
+        $records   = [];
         $records[] = sprintf(
             self::MESSAGE_FORMAT_HEADER . $this->new_line,
             '',
@@ -94,7 +84,7 @@ class RecordTable
         $record = null;
         try{
             $record = $this->queue->dequeue();
-        } catch(Exception $e){
+        } catch(\Exception $e){
             return $records;
         }
 
@@ -125,8 +115,8 @@ class RecordTable
                 $diff_memory
             );
             // 前回値を保持
-            $prev_time    = $target_time;
-            $prev_memory  = $target_memory;
+            $prev_time   = $target_time;
+            $prev_memory = $target_memory;
         }
         return $records;
     }

@@ -24,6 +24,7 @@ class RecordTableTest extends TestCase
     private $record = null;
     /** @var Queue */
     private $queue  = null;
+    
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -59,7 +60,7 @@ class RecordTableTest extends TestCase
      * @covers ::outputType
      * @return void
      */
-    public function testOutputType()
+    public function testOutputType1()
     {
         $output = new RecordTable($this->queue);
         $this->assertEquals(
@@ -69,11 +70,26 @@ class RecordTableTest extends TestCase
     /**
      * @covers ::__construct
      * @covers ::outputType
-     * @covers ::echo
+     * @covers ::create
      * @return void
      */
-    public function testRecordTable()
+    public function testRecordTable1()
     {
+        $output = new RecordTable($this->queue);
+        $records = $output->create();
+        $this->assertInternalType('array', $records);
+        $this->assertNotEmpty($records);
+    }
+
+    /**
+     * @covers ::__construct
+     * @covers ::outputType
+     * @covers ::create
+     * @return void
+     */
+    public function testRecordTable2()
+    {
+        $this->queue->enqueue($this->record);
         $output = new RecordTable($this->queue);
         $records = $output->create();
         $this->assertInternalType('array', $records);
