@@ -6,6 +6,7 @@ cache:
   paths:
     - vendor/
     - docs/coverage
+    - docs/phpdoc
 
 stages:
   - prepare
@@ -36,7 +37,16 @@ coverage_php:
     # php coverageを出力
     - phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.xml
 
-save_documents:
+document_php:
+  only:
+    - master
+  stage: generate
+  script:
+    # php documentを出力
+    - ./vendor/bin/phpdoc -c ./phpdoc.dist.xml
+
+
+    save_documents:
   only:
     - master
   stage: save
