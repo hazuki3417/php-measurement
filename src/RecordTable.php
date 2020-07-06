@@ -12,7 +12,7 @@ use \Selen\Measurement\Queue;
 /**
  * 計測結果を出力するクラス
  */
-class Output
+class RecordTable
 {
     // const PHP_ERROR_LOG_PATH = '/var/log/nginx/errors.log';
     
@@ -76,12 +76,12 @@ class Output
 
     /**
      * 計測結果を出力します。
-     * @return void
+     * @return array
      */
-    public function echo()
+    public function create()
     {
-        echo $this->new_line;
-        echo sprintf(
+        $records = [];
+        $records[] = sprintf(
             self::MESSAGE_FORMAT_HEADER . $this->new_line,
             '',
             'process(1)[s]',
@@ -95,7 +95,7 @@ class Output
         try{
             $record = $this->queue->dequeue();
         } catch(Exception $e){
-            return;
+            return $records;
         }
 
         $base_time   = $record->getTime();
@@ -116,7 +116,7 @@ class Output
             $diff_time   = $target_time - $base_time;
             $diff_memory = $target_memory - $base_memory;
 
-            echo sprintf(
+            $records[] = sprintf(
                 self::MESSAGE_FORMAT_RESULT . $this->new_line,
                 'test',
                 $lap_time,
@@ -128,5 +128,6 @@ class Output
             $prev_time    = $target_time;
             $prev_memory  = $target_memory;
         }
+        return $records;
     }
 }

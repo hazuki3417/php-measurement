@@ -8,7 +8,7 @@
 namespace Selen\Measurement;
 
 use Selen\Measurement\State;
-use Selen\Measurement\Output;
+use Selen\Measurement\RecordTable;
 use Selen\Measurement\Record;
 use Selen\Measurement\Queue;
 /**
@@ -87,8 +87,12 @@ class Stopwatch
      */
     public function output()
     {
-        $output = new Output($this->queue);
-        $output->echo();
+        $output = new RecordTable($this->queue);
+        $records = $output->create();
+        foreach ($records as $record)
+        {
+            echo $record;
+        }
     }
     
 

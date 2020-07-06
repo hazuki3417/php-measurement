@@ -6,19 +6,19 @@
  * @package Selen\Measurement
  * 
  * @group Measurement
- * @group Output
+ * @group RecordTable
  */
 namespace Selen\Measurement\Test;
 
 use \PHPUnit\Framework\TestCase;
-use \Selen\Measurement\Output;
+use \Selen\Measurement\RecordTable;
 use \Selen\Measurement\Queue;
 use \Selen\Measurement\Record;
 
 /**
- * @coversDefaultClass \Selen\Measurement\Output
+ * @coversDefaultClass \Selen\Measurement\RecordTable
  */
-class OutputTest extends TestCase
+class RecordTableTest extends TestCase
 {
     /** @var Record */
     private $record = null;
@@ -48,10 +48,22 @@ class OutputTest extends TestCase
      * @expectedException InvalidArgumentException
      * @return void
      */
-    public function testException()
+    public function testOutputTypeException()
     {
-        $output = new Output($this->queue);
+        $output = new RecordTable($this->queue);
         $output->outputType('');
+    }
+    
+    /**
+     * @covers ::__construct
+     * @covers ::outputType
+     * @return void
+     */
+    public function testOutputType()
+    {
+        $output = new RecordTable($this->queue);
+        $this->assertEquals(
+            $output->outputType(RecordTable::OUTPUT_TYPE_TERMINAL), null);
     }
     
     /**
@@ -60,9 +72,11 @@ class OutputTest extends TestCase
      * @covers ::echo
      * @return void
      */
-    public function testOutput()
+    public function testRecordTable()
     {
-        $output = new Output($this->queue);
-        $this->assertEquals($output->echo(), null);
+        $output = new RecordTable($this->queue);
+        $records = $output->create();
+        $this->assertInternalType('array', $records);
+        $this->assertNotEmpty($records);
     }
 }
