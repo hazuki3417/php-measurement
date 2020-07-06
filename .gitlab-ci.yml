@@ -46,7 +46,7 @@ document_php:
     - ./vendor/bin/phpdoc -c ./phpdoc.dist.xml
 
 
-    save_documents:
+save_documents:
   only:
     - master
   stage: save
