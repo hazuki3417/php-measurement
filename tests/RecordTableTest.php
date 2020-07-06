@@ -20,8 +20,6 @@ use \Selen\Measurement\Record;
  */
 class RecordTableTest extends TestCase
 {
-    /** @var Record */
-    private $record = null;
     /** @var Queue */
     private $queue  = null;
     
@@ -31,7 +29,6 @@ class RecordTableTest extends TestCase
      */
     protected function setUp()
     {
-        $this->record = new Record(0, 0.0);
         $this->queue  = new Queue;
     }
 
@@ -89,7 +86,9 @@ class RecordTableTest extends TestCase
      */
     public function testRecordTable2()
     {
-        $this->queue->enqueue($this->record);
+        $this->queue->enqueue(new Record(0, 0.0));
+        $this->queue->enqueue(new Record(1, 1.5));
+        $this->queue->enqueue(new Record(2, 2.5));
         $output = new RecordTable($this->queue);
         $records = $output->create();
         $this->assertInternalType('array', $records);
