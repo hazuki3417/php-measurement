@@ -17,7 +17,6 @@ stages:
   - deploy
 
 display:
-rules:
   stage: prepare
   script: 
     - echo $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
