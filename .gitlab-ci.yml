@@ -30,6 +30,8 @@ test_php:
     - ./vendor/bin/phpunit -c ./phpunit.xml 
 
 coverage_php:
+  # カバレッジ出力のときのみ自前のものをつかう
+  image: hazuki3417/ubuntu_nginx_php:latest
   only:
     - master
   stage: generate
