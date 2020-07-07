@@ -29,15 +29,15 @@ check:
 
 test_php:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "push"' # シングルクォーテーションで囲わないと行けない
       changes: #二重引用符で囲わなければ反応しない
       - "src/*"
       - "tests/*"
       when: always
-  # only:
-    # - master
+      # 上記の条件に一致したときのみjobを実行
   stage: test
   script: 
+    # php unittestを実行
     - ./vendor/bin/phpunit -c ./phpunit.xml 
 
 coverage_php:
@@ -47,6 +47,7 @@ coverage_php:
       - "src/*"
       - "tests/*"
       when: always
+      # 上記の条件に一致したときのみjobを実行
   stage: generate
   script:
     # php coverageを出力
@@ -59,6 +60,7 @@ document_php:
       - "src/*"
       - "tests/*"
       when: always
+      # 上記の条件に一致したときのみjobを実行
   stage: generate
   script:
     # php documentを出力
@@ -68,8 +70,13 @@ document_php:
 save_documents:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "src/*"
+      - "tests/*"
       when: manual
       allow_failure: true
+      # パイプラインの失敗を許容するかどうか true:許可する false:許可しない
+      # 許可した場合はスキップ扱いとなる
   stage: save
   script: 
     # Gitのセットアップ
