@@ -1,5 +1,5 @@
 # Runnerとして利用するDockerコンテナイメージを指定
-image: php:5.6-cli
+image: hazuki3417/ubuntu_nginx_php:latest
 
 # job間で共有するディレクトリを指定する
 cache:
@@ -23,6 +23,8 @@ setting_composer:
     - php composer.phar dumpautoload
 
 test_php:
+  # カバレッジ出力のときのみ自前のものをつかう
+  image: php:5.6-cli
   only:
     - master
   stage: test
@@ -30,8 +32,6 @@ test_php:
     - ./vendor/bin/phpunit -c ./phpunit.xml 
 
 coverage_php:
-  # カバレッジ出力のときのみ自前のものをつかう
-  image: hazuki3417/ubuntu_nginx_php:latest
   only:
     - master
   stage: generate
