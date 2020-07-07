@@ -12,7 +12,7 @@ use Selen\Measurement\RecordTable;
 use Selen\Measurement\Record;
 use Selen\Measurement\Queue;
 /**
- * 処理のパフォーマンスチェックをするクラス
+ * 処理のパフォーマンスを計測するクラス
  */
 class Performance
 {
