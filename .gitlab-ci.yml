@@ -1,25 +1,36 @@
 # Runnerとして利用するDockerコンテナイメージを指定
 image: hazuki3417/ubuntu_nginx_php:latest
 
-# job間で共有するディレクトリを指定する
-# cache:
-#   paths:
-#     - vendor/
-#     - docs/coverage
-#     - docs/phpdoc
+#job間で共有するディレクトリを指定する
+cache:
+  paths:
+    - vendor/
+    - docs/coverage
+    - docs/phpdoc
 
-# stages:
-#   - prepare
-#   - build
-#   - test
-#   - generate
-#   - save
-#   - deploy
+stages:
+  - prepare
+  - build
+  - test
+  - generate
+  - save
+  - deploy
 
-# check:
-#   stage: prepare
-#   script: 
-#     - export
+check1:
+  rules:
+      - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "amaster"'
+        when: always  
+  stage: prepare
+  script: 
+    - echo 'check1が実行された'
+
+check2:
+  rules:
+      - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+        when: always  
+  stage: prepare
+  script: 
+    - echo 'check2が実行された'
 
 # setting_composer:
 #   stage: prepare
