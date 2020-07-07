@@ -19,16 +19,26 @@ stages:
 setting_composer:
   stage: prepare
   script: 
+<<<<<<< HEAD
     - php composer.phar install
     - php composer.phar dumpautoload
+=======
+    - git config -l
+>>>>>>> aac333b2559c7b2f03fcfd6d277eadcb5f9c3540
 
 test_php:
   # カバレッジ出力のときのみ自前のものをつかう
   image: php:5.6-cli
   rules:
+<<<<<<< HEAD
     - changes:
       - master
   stage: test
+=======
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "amaster"'
+      when: always  
+  stage: prepare
+>>>>>>> aac333b2559c7b2f03fcfd6d277eadcb5f9c3540
   script: 
     - ./vendor/bin/phpunit -c ./phpunit.xml 
 
