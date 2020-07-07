@@ -94,7 +94,6 @@ class Stopwatch
             echo $record;
         }
     }
-    
 
     /**
      * 計測記録を追加します。
