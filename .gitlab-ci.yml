@@ -53,7 +53,7 @@ document_php:
 
 save_documents:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
+    # - if: '$CI_PIPELINE_SOURCE == "push"'
     - when: manual
     - allow_failure: true
   stage: save
