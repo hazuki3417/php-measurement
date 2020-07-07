@@ -16,6 +16,11 @@ stages:
   - save
   - deploy
 
+check:
+  stage: prepare
+  script: 
+    - export
+
 setting_composer:
   stage: prepare
   script: 
