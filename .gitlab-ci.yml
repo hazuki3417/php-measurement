@@ -19,12 +19,12 @@ stages:
 display:
   stage: prepare
   script: 
-    - echo $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - git config -l
 
 check1:
   rules:
-      - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "amaster"'
-        when: always  
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "amaster"'
+      when: always  
   stage: prepare
   script: 
     - echo 'check1が実行された'
