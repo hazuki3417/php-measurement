@@ -30,7 +30,7 @@ check:
 test_php:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
-      changes:
+      changes: #二重引用符で囲わなければ反応しない
       - "src/*"
       - "tests/*"
       when: always
