@@ -122,7 +122,5 @@ class Stopwatch
     private function nowTime()
     {
         return microtime(true);
-
-        
     }
 }
