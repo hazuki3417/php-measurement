@@ -1,4 +1,4 @@
-![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement)
+![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement)  ![tag](https://img.shields.io/github/v/tag/hazuki3417/php-measurement) ![latest commit](https://img.shields.io/github/commits-since/hazuki3417/php-measurement/1.1.0) ![last commit](https://img.shields.io/github/last-commit/hazuki3417/php-measurement) ![code size](https://img.shields.io/github/languages/code-size/hazuki3417/php-measurement) ![repo size](https://img.shields.io/github/repo-size/hazuki3417/php-measurement) ![build](https://img.shields.io/gitlab/pipeline/hazuki3417/php-measurement)
 
 [English](README.md) | [日本語](README.ja.md)
 
