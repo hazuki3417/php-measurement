@@ -28,23 +28,37 @@ check:
     - export
 
 test_php:
-  only:
-    - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - ./src/*
+      - ./tests/*
+      when: always
+  # only:
+    # - master
   stage: test
   script: 
     - ./vendor/bin/phpunit -c ./phpunit.xml 
 
 coverage_php:
-  only:
-    - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - ./src/*
+      - ./tests/*
+      when: always
   stage: generate
   script:
     # php coverageを出力
     - phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.xml
 
 document_php:
-  only:
-    - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - ./src/*
+      - ./tests/*
+      when: always
   stage: generate
   script:
     # php documentを出力
@@ -54,8 +68,8 @@ document_php:
 save_documents:
   rules:
     # - if: '$CI_PIPELINE_SOURCE == "push"'
-    - when: manual
     - allow_failure: true
+    - when: manual
   stage: save
   script: 
     # Gitのセットアップ
