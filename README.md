@@ -3,6 +3,7 @@
 <!-- ![tag](https://img.shields.io/github/v/tag/hazuki3417/php-measurement)  -->
 ![build](https://img.shields.io/gitlab/pipeline/hazuki3417/php-measurement) ![last commit](https://img.shields.io/github/last-commit/hazuki3417/php-measurement) ![latest commit](https://img.shields.io/github/commits-since/hazuki3417/php-measurement/1.1.0) ![repo size](https://img.shields.io/github/repo-size/hazuki3417/php-measurement) ![code size](https://img.shields.io/github/languages/code-size/hazuki3417/php-measurement)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/fc91d1a54ca4689fb4e3/maintainability)](https://codeclimate.com/github/hazuki3417/php-measurement/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/fc91d1a54ca4689fb4e3/test_coverage)](https://codeclimate.com/github/hazuki3417/php-measurement/test_coverage)
 
 [English](README.md) | [日本語](README.ja.md)
 
