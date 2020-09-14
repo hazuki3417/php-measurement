@@ -1,0 +1,33 @@
+name: Code Climate
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+      
+    - name: Generate Coverage
+      run: phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.github.xml
+      
+    - name: Install Code Climate Reporter 
+      run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+
+    - name: Post Code Climate Reporter
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      run: |
+        ./cc-test-reporter format-coverage ./docs/coverage-clover.xml --input-type clover
+        ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
