@@ -1,13 +1,5 @@
 name: Code Climate
 
-
-plugins:
-  phpcodesniffer:
-    enabled: true
-    config:
-      file_extensions: "php"
-      standard: "PSR2"
-
 on:
   push:
     branches: [ master ]
