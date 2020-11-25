@@ -55,10 +55,12 @@ $perf = Selen\Measurement\Performance();
 
 ### 2. 計測
 
-試しに`String`型の値を`10000`回インクリメントする処理を計測します。
+試しに`String`型と`Int`型の変数に対するインクリメント処理にかかる時間を計測します。
+
 
 ```php
-include 'vendor/autoload.php';
+<?php
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 use Selen\Measurement\Performance;
 
@@ -71,6 +73,18 @@ $perf1->set(function () {
         $result += $sum;
     }
 })->start(8);
+
+
+$perf2 = new Performance();
+
+$perf2->set(function () {
+    $sum = 1;
+    $result = 0;
+    for($i = 1; $i < 10000; $i++){
+        $result += $sum;
+    }
+})->start(8);
+
 ```
 
 

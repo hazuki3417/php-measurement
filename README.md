@@ -55,11 +55,12 @@ $perf = Selen\Measurement\Performance();
 
 ### 2.Measurement
 
-We will measure the process of incrementing a `10000` times the value of a `String` type in an attempt.
+Try to measure the time it takes to do an incremental operation on a variable of type `String` and `Int`.
 
 
 ```php
-include 'vendor/autoload.php';
+<?php
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 use Selen\Measurement\Performance;
 
@@ -72,6 +73,18 @@ $perf1->set(function () {
         $result += $sum;
     }
 })->start(8);
+
+
+$perf2 = new Performance();
+
+$perf2->set(function () {
+    $sum = 1;
+    $result = 0;
+    for($i = 1; $i < 10000; $i++){
+        $result += $sum;
+    }
+})->start(8);
+
 ```
 
 
@@ -88,8 +101,8 @@ Measurement results.
 | --- | --- | --- |
 | process (1) [s] | Execution time per run | sec |
 | process (t) [s] | Total execution time | sec ||
-| process (1) [MB] | Memory usage per time | Megabyte |
-| process (t) [MB] | Total memory usage | megabytes |
+| process (1) [MB] | Memory usage per time | MegaByte |
+| process (t) [MB] | Total memory usage | MegaBytes |
 
 | Row | description |
 | --- | --- |
