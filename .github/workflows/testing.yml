@@ -1,15 +1,11 @@
-name: Testing
+name: Code Climate
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-
-
-  #job名の区切り文字はハイフンかアンダーバーのみ利用可能
-  #job間ではアーティファクト（成果物）は共有されない
-  testing-php:
+  testing:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -23,12 +19,11 @@ jobs:
       
     - name: Generate Coverage
       run: phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.xml
-  
+      
     - name: Install Code Climate Reporter 
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o ./cc-test-reporter
         chmod +x ./cc-test-reporter
-
     - name: Post Code Climate Reporter
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
