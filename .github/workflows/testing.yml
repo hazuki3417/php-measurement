@@ -6,6 +6,9 @@ on:
 
 jobs:
 
+
+  #job名の区切り文字はハイフンかアンダーバーのみ利用可能
+  #job間ではアーティファクト（成果物）は共有されない
   testing-php:
     runs-on: ubuntu-latest
     steps:
@@ -21,9 +24,6 @@ jobs:
     - name: Generate Coverage
       run: phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.xml
   
-  send-report:
-    runs-on: ubuntu-latest
-    steps:
     - name: Install Code Climate Reporter 
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o ./cc-test-reporter
