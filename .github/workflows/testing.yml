@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  testing php:
+  testing-php:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
