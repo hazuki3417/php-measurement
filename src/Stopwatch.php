@@ -27,7 +27,8 @@ class Stopwatch
     private $queue = null;
 
     /**
-     * コンストラクタ
+     * コードの実行速度を計測するインスタンスを生成します。
+     * @return void
      */
     public function __construct()
     {

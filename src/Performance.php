@@ -27,7 +27,8 @@ class Performance
     private $queue = null;
 
     /**
-     * コンストラクタ
+     * コードのパフォーマンスを計測するインスタンスを生成します。
+     * @return void
      */
     public function __construct()
     {
