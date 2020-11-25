@@ -7,16 +7,16 @@
 
 [English](README.md) | [日本語](README.ja.md)
 
-# Overview（概要）
+# 概要
 
-このパッケージはPHPプログラムの実行速度をチェックします。
+このパッケージはPHPプログラムの実行速度をチェックします。  
 このパッケージを用いることでリファクタリングなどの作業を支援します。
 
-## Requirement（要件）
+## 要件
  - php 5.6以上
  
 
-## Install（インストール）
+## インストール
 
 パッケージをインストールするには、ターミナルから下記のコマンドを実行します。
 
@@ -27,11 +27,10 @@ composer require --dev hazuki3417/php-measurement
 ※開発支援用のパッケージですので、`--dev`オプションを付与してインストールすることを推奨します。
 
 
-## Usage（使い方）
+## 使い方
 
-### 1.インスタンスを生成
-`use`演算子を利用して`Performance`クラスのエイリアスを作成し、インスタンスを生成します。
-（それか名前空間を指定して`Performance`クラスのインスタンスを生成します。）
+### 1. インスタンスを生成
+`use`演算子を利用して`Performance`クラスのエイリアスを作成し、インスタンスを生成します。  
 
 ```php
 include 'vendor/autoload.php';
@@ -44,6 +43,8 @@ $perf = new Performance();
 
 ```
 
+名前空間を指定して`Performance`クラスのインスタンスを生成する方法でも良いです。
+
 ```php
 include 'vendor/autoload.php';
 
@@ -52,7 +53,9 @@ $perf = Selen\Measurement\Performance();
 
 ```
 
-### 2.計測
+### 2. 計測
+
+試しに`String`型の値を`10000`回インクリメントする処理を計測します。
 
 ```php
 include 'vendor/autoload.php';
@@ -73,6 +76,8 @@ $perf1->set(function () {
 
 ## 出力結果
 
+計測結果です。
+
 ![performance](docs/images/performance.png)
 
 
@@ -81,21 +86,20 @@ $perf1->set(function () {
 |process(1)[s]|1回あたりの実行時間|秒|
 |process(t)[s]|累計の実行時間|秒||
 |process(1)[MB]|1回あたりのメモリ使用量|メガバイト|
-|process(1)[MB]|累計のメモリ使用量|メガバイト|
+|process(t)[MB]|累計のメモリ使用量|メガバイト|
 
 |行|説明|
 |---|---|
 |process:~|1回あたりの結果値|
 |average|実行回数の平均値|
 
-## その他情報
+```
+NOTE: 計測結果は環境によって異なります。
+```
 
-コーディング規約:PSR2
+## コード解析、成果物など
 
+ - [API Documentation](https://php-measurement.s3-ap-northeast-1.amazonaws.com/phpdoc/index.html)
+ - [Coverage](https://php-measurement.s3-ap-northeast-1.amazonaws.com/coverage/index.html)
+ - [Code Climate](https://codeclimate.com/github/hazuki3417/php-measurement)
 
-## Licence
-[MIT](https://github.com/hazuki3417/php-measurement/blob/master/LICENSE)
-
-## Author
-
-[hazuki3417](https://github.com/hazuki3417)

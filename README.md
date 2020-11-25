@@ -9,7 +9,7 @@
 
 # Overview
 
-This package checks the execution speed of PHP programs.
+This package checks the execution speed of PHP programs.  
 Use this package to support tasks such as refactoring.
 
 ## Requirement
@@ -31,7 +31,6 @@ Since it is a package for development support, it is recommended to install it w
 
 ### 1. Create instance
 Create an instance of the `Performance` class using the` use` operator and create an instance.  
-(Or specify a namespace and create an instance of the `Performance` class.)
 
 ```php
 include 'vendor/autoload.php';
@@ -44,6 +43,8 @@ $perf = new Performance();
 
 ```
 
+You can also create an instance of the `Performance` class by specifying a namespace.
+
 ```php
 include 'vendor/autoload.php';
 
@@ -53,6 +54,9 @@ $perf = Selen\Measurement\Performance();
 ```
 
 ### 2.Measurement
+
+We will measure the process of incrementing a `10000` times the value of a `String` type in an attempt.
+
 
 ```php
 include 'vendor/autoload.php';
@@ -73,7 +77,11 @@ $perf1->set(function () {
 
 ## Output result
 
+Measurement results.
+
 ![performance](docs/images/performance.png)
+
+
 
 
 | Column | description | unit |
@@ -81,21 +89,19 @@ $perf1->set(function () {
 | process (1) [s] | Execution time per run | sec |
 | process (t) [s] | Total execution time | sec ||
 | process (1) [MB] | Memory usage per time | Megabyte |
-| process (1) [MB] | Total memory usage | megabytes |
+| process (t) [MB] | Total memory usage | megabytes |
 
 | Row | description |
 | --- | --- |
 | process: ~ | Result value per time |
 | average | Average number of executions |
 
-## Other information
+```
+NOTE: The measurement results vary depending on the environment.
+```
 
-Coding convention: PSR2
+## Code analysis, artifact, etc
 
-
-## License
-[MIT](https://github.com/hazuki3417/php-measurement/blob/master/LICENSE)
-
-## Author
-
-[hazuki3417](https://github.com/hazuki3417)
+ - [API Documentation](https://php-measurement.s3-ap-northeast-1.amazonaws.com/phpdoc/index.html)
+ - [Coverage](https://php-measurement.s3-ap-northeast-1.amazonaws.com/coverage/index.html)
+ - [Code Climate](https://codeclimate.com/github/hazuki3417/php-measurement)
