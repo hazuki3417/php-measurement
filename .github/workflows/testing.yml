@@ -1,11 +1,12 @@
-name: Code Climate
+name: Testing
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  testing:
+
+  testing php:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -18,8 +19,11 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
       
     - name: Generate Coverage
-      run: phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.github.xml
-      
+      run: phpdbg -qrr ./vendor/bin/phpunit -c ./phpunit.xml
+  
+  send-report:
+    runs-on: ubuntu-latest
+    steps:
     - name: Install Code Climate Reporter 
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o ./cc-test-reporter

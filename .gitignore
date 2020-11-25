@@ -1,1 +1,5 @@
 /vendor/
+
+# docsファイルの除外設定
+/coverage
+coverage-clover.xml
