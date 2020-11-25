@@ -33,7 +33,7 @@ Since it is a package for development support, it is recommended to install it w
 Create an instance of the `Performance` class using the` use` operator and create an instance.  
 
 ```php
-include 'vendor/autoload.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 // Create an alias for the Performance class
 use Selen\Measurement\Performance;
@@ -46,7 +46,7 @@ $perf = new Performance();
 You can also create an instance of the `Performance` class by specifying a namespace.
 
 ```php
-include 'vendor/autoload.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 // Create instance by specifying namespace
 $perf = Selen\Measurement\Performance();
@@ -55,7 +55,7 @@ $perf = Selen\Measurement\Performance();
 
 ### 2.Measurement
 
-Try to measure the time it takes to do an incremental operation on a variable of type `String` and `Int`.
+Try to measure the time taken for the addition process when the types of variables are the same and different.
 
 
 ```php

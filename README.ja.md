@@ -33,7 +33,7 @@ composer require --dev hazuki3417/php-measurement
 `use`演算子を利用して`Performance`クラスのエイリアスを作成し、インスタンスを生成します。  
 
 ```php
-include 'vendor/autoload.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 // Performanceクラスのエイリアスを作成
 use Selen\Measurement\Performance;
@@ -46,7 +46,7 @@ $perf = new Performance();
 名前空間を指定して`Performance`クラスのインスタンスを生成する方法でも良いです。
 
 ```php
-include 'vendor/autoload.php';
+include dirname(__DIR__) . '/vendor/autoload.php';
 
 // 名前空間を指定してインスタンスを生成
 $perf = Selen\Measurement\Performance();
@@ -55,7 +55,7 @@ $perf = Selen\Measurement\Performance();
 
 ### 2. 計測
 
-試しに`String`型と`Int`型の変数に対するインクリメント処理にかかる時間を計測します。
+試しに変数の型が同じときと異なるときの加算処理にかかる時間を計測します。
 
 
 ```php
