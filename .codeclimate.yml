@@ -1,7 +1,14 @@
 plugins:
   phpcodesniffer:
   enabled: true
+  channel: beta
   config:
     file_extensions: "php"
     config:
-      standard: "PSR2"
+      standard: "PSR12"
+
+  phpmd:
+    enabled: false
+    config:
+      file_extensions: 
+        - php
