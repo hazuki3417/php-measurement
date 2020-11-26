@@ -1,18 +1,20 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
- * 
+ *
  * @group Measurement
  * @group Stopwatch
  * @group Record
  */
+
 namespace Selen\Measurement\Test;
 
-use \PHPUnit\Framework\TestCase;
-use \Selen\Measurement\Record;
+use PHPUnit\Framework\TestCase;
+use Selen\Measurement\Record;
 
 /**
  * @coversDefaultClass \Selen\Measurement\Record
@@ -74,7 +76,7 @@ class RecordTest extends TestCase
         $record = new Record($nowMemory, $nowTime);
 
         $this->assertEquals($nowMemory, $record->getMemory());
-        $this->assertEquals($nowTime,   $record->getTime());
+        $this->assertEquals($nowTime, $record->getTime());
     }
 
     /**
@@ -84,7 +86,6 @@ class RecordTest extends TestCase
     private function nowMemory()
     {
         return memory_get_peak_usage();
-
     }
 
     /**

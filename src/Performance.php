@@ -1,16 +1,19 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
  */
+
 namespace Selen\Measurement;
 
 use Selen\Measurement\State;
 use Selen\Measurement\RecordTable;
 use Selen\Measurement\Record;
 use Selen\Measurement\Queue;
+
 /**
  * 処理のパフォーマンスを計測するクラス
  */
@@ -83,8 +86,7 @@ class Performance
         // 計測結果を出力
         $output = new RecordTable($this->queue);
         $records = $output->create();
-        foreach ($records as $record)
-        {
+        foreach ($records as $record) {
             echo $record;
         }
     }
@@ -106,7 +108,6 @@ class Performance
     private function nowMemory()
     {
         return memory_get_peak_usage();
-
     }
 
     /**

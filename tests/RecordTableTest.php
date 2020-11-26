@@ -1,19 +1,21 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
- * 
+ *
  * @group Measurement
  * @group RecordTable
  */
+
 namespace Selen\Measurement\Test;
 
-use \PHPUnit\Framework\TestCase;
-use \Selen\Measurement\RecordTable;
-use \Selen\Measurement\Queue;
-use \Selen\Measurement\Record;
+use PHPUnit\Framework\TestCase;
+use Selen\Measurement\RecordTable;
+use Selen\Measurement\Queue;
+use Selen\Measurement\Record;
 
 /**
  * @coversDefaultClass \Selen\Measurement\RecordTable
@@ -29,7 +31,7 @@ class RecordTableTest extends TestCase
      */
     protected function setUp()
     {
-        $this->queue  = new Queue;
+        $this->queue  = new Queue();
     }
 
     /**
@@ -61,7 +63,9 @@ class RecordTableTest extends TestCase
     {
         $output = new RecordTable($this->queue);
         $this->assertEquals(
-            $output->outputType(RecordTable::OUTPUT_TYPE_TERMINAL), null);
+            $output->outputType(RecordTable::OUTPUT_TYPE_TERMINAL),
+            null
+        );
     }
     
     /**

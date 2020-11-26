@@ -1,17 +1,19 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
- * 
+ *
  * @group Measurement
  * @group Stopwatch
  */
+
 namespace Selen\Measurement\Test;
 
-use \PHPUnit\Framework\TestCase;
-use \Selen\Measurement\Stopwatch;
+use PHPUnit\Framework\TestCase;
+use Selen\Measurement\Stopwatch;
 
 /**
  * @coversDefaultClass \Selen\Measurement\Stopwatch
@@ -61,10 +63,10 @@ class StopwatchTest extends TestCase
     {
         $stopwatch = new Stopwatch();
 
-        $this->assertEquals($stopwatch->start(),  null);
-        $this->assertEquals($stopwatch->lap(),    null);
-        $this->assertEquals($stopwatch->lap(),    null);
-        $this->assertEquals($stopwatch->stop(),   null);
+        $this->assertEquals($stopwatch->start(), null);
+        $this->assertEquals($stopwatch->lap(), null);
+        $this->assertEquals($stopwatch->lap(), null);
+        $this->assertEquals($stopwatch->stop(), null);
         echo "\n";
         echo "\n";
         echo "\n";

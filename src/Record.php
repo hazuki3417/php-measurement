@@ -1,11 +1,14 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
  */
+
 namespace Selen\Measurement;
+
 /**
  * メモリ使用量、実行時間を保持するクラス
  */
@@ -37,7 +40,7 @@ class Record
      */
     private function setMemory($memory)
     {
-        if(!is_integer($memory)){
+        if (!is_integer($memory)) {
             throw new \InvalidArgumentException();
         }
         $this->memory = $memory;
@@ -60,7 +63,7 @@ class Record
      */
     private function setTime($time)
     {
-        if(!is_float($time)){
+        if (!is_float($time)) {
             throw new \InvalidArgumentException();
         }
         $this->time = $time;

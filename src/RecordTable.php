@@ -1,24 +1,27 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
  */
+
 namespace Selen\Measurement;
 
-use \Selen\Measurement\Queue;
+use Selen\Measurement\Queue;
+
 /**
  * 計測結果を出力するクラス
  */
 class RecordTable
 {
-    const OUTPUT_TYPE_HTML     = 'html';
-    const OUTPUT_TYPE_LOG      = 'log';
-    const OUTPUT_TYPE_TERMINAL = 'terminal';
+    public const OUTPUT_TYPE_HTML     = 'html';
+    public const OUTPUT_TYPE_LOG      = 'log';
+    public const OUTPUT_TYPE_TERMINAL = 'terminal';
 
-    const MESSAGE_FORMAT_HEADER = '| %-12s | %16s | %16s | %14s | %14s |';
-    const MESSAGE_FORMAT_RESULT = '| %-12s | %16.12f | %16.12f | %14.3f | %14.3f |';
+    public const MESSAGE_FORMAT_HEADER = '| %-12s | %16s | %16s | %14s | %14s |';
+    public const MESSAGE_FORMAT_RESULT = '| %-12s | %16.12f | %16.12f | %14.3f | %14.3f |';
 
     /**
      * @var string 改行コードを保持する変数
@@ -47,7 +50,7 @@ class RecordTable
      */
     public function outputType($type)
     {
-        switch($type){
+        switch ($type) {
             case self::OUTPUT_TYPE_TERMINAL:
                 $this->new_line = "\n";
                 break;
@@ -82,9 +85,9 @@ class RecordTable
 
         // 最初の記録は基準値として利用するため先に取得
         $record = null;
-        try{
+        try {
             $record = $this->queue->dequeue();
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             return $records;
         }
 
@@ -95,7 +98,7 @@ class RecordTable
 
         // 2つ目から基準値との差分を出力する
         $count = $this->queue->size();
-        for($i = 0; $i < $count; $i++){
+        for ($i = 0; $i < $count; $i++) {
             $record        = $this->queue->dequeue();
 
             $target_time   = $record->getTime();

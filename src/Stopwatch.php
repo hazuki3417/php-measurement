@@ -1,16 +1,19 @@
 <?php
+
 /**
  * @license MIT
  * @author hazuki3417<hazuki3417@gmail.com>
  * @copyright 2020 hazuki3417 all rights reserved.
  * @package Selen\Measurement
  */
+
 namespace Selen\Measurement;
 
 use Selen\Measurement\State;
 use Selen\Measurement\RecordTable;
 use Selen\Measurement\Record;
 use Selen\Measurement\Queue;
+
 /**
  * メモリ使用量、実行時間を計測するクラス
  */
@@ -65,7 +68,7 @@ class Stopwatch
      */
     public function lap()
     {
-        if(!$this->state->get()){
+        if (!$this->state->get()) {
             // 計測終了中ならエラーメッセージを出力する
             throw new \RuntimeException('計測中に実行してください。');
         }
@@ -90,8 +93,7 @@ class Stopwatch
     {
         $output = new RecordTable($this->queue);
         $records = $output->create();
-        foreach ($records as $record)
-        {
+        foreach ($records as $record) {
             echo $record;
         }
     }
@@ -113,7 +115,6 @@ class Stopwatch
     private function nowMemory()
     {
         return memory_get_peak_usage();
-
     }
 
     /**
