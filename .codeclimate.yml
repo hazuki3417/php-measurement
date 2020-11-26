@@ -1,5 +1,32 @@
 version: "2"
 
+exclude_patterns:
+  # Initial setting
+  - "config/"
+  - "db/"
+  - "dist/"
+  - "features/"
+  - "**/node_modules/"
+  - "script/"
+  - "**/spec/"
+  - "**/test/"
+  - "**/tests/"
+  - "Tests/"
+  - "**/vendor/"
+  - "**/*_test.go"
+  - "**/*.d.ts"
+  - "docs/"
+  # What I added
+  - "example/"
+
+# pluginsの中で除外する場合はplugin名の直下に記述する
+# plugins: 
+#   phpcodesniffer:
+#     enabled: true
+#     exclude_patterns:
+#      - "example/"
+# 
+
 plugins: 
   phpcodesniffer:
     enabled: true
@@ -9,6 +36,6 @@ plugins:
       file_extensions: "php"
 
   phpmd:
-    enabled: false
+    enabled: true
     config:
       file_extensions: "php"
