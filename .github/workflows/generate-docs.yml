@@ -21,7 +21,7 @@ jobs:
 
 
     - name: Generate Document
-      run: php ./vendor/bin/phpdoc -c ./phpdoc.dist.xml
+      run: php ./vendor/bin/phpdoc -c ./phpdoc.xml
 
 
     # [Reference]
