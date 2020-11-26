@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="Selen" xsi:noNamespaceSchemaLocation="../../../phpcs.xsd">
+
+    <!-- ルールセットに関する說明 -->
+    <description>Selen Project Coding Rule</description>
+
+    <!-- チェックしたいファイル、ディレクトリを記述 -->
+    <file>./src</file>
+    <file>./tests</file>
+
+    <!-- コマンドのオプションを指定 -->
+    <arg value="ps" />
+    <!-- 出力に色を適用 -->
+    <arg name="colors" />
+    <!-- エラーとなるコードを表示する -->
+    <arg name="report" value="code"/>
+    <!-- タブを指定したスペース幅に変換 -->
+    <arg name="tab-width" value="4"/>
+
+    <rule ref="PSR12"/>
+</ruleset>
