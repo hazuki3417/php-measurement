@@ -1,23 +1,21 @@
 version: "2"
 
 exclude_patterns:
-  # Initial setting
-  - "config/"
-  - "db/"
-  - "dist/"
-  - "features/"
+  - "**/.*"
+  - "**/LICENSE"
+  - "**/*.md"
+  - "**/composer.json"
+  - "**/composer.lock"
+  - "**/composer.phar"
   - "**/node_modules/"
-  - "script/"
-  - "**/spec/"
-  - "**/test/"
+  - "**/docker-compose.yml"
+  - "**/Dockerfile*"
+  - "**/*phpdoc*"
+  - "**/*phpunit*"
   - "**/tests/"
-  - "Tests/"
   - "**/vendor/"
-  - "**/*_test.go"
-  - "**/*.d.ts"
   - "docs/"
-  # What I added
-  - "example/"
+  - "**/examples/"
 
 # pluginsの中で除外する場合はplugin名の直下に記述する
 # plugins: 
