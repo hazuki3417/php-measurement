@@ -1,7 +1,7 @@
 ![license](https://img.shields.io/github/license/hazuki3417/php-measurement) ![version](https://img.shields.io/packagist/php-v/hazuki3417/php-measurement) [![Latest Stable Version](https://poser.pugx.org/hazuki3417/php-measurement/v)](//packagist.org/packages/hazuki3417/php-measurement) [![Latest Unstable Version](https://poser.pugx.org/hazuki3417/php-measurement/v/unstable)](//packagist.org/packages/hazuki3417/php-measurement) [![Dependents](https://poser.pugx.org/hazuki3417/php-measurement/dependents)](//packagist.org/packages/hazuki3417/php-measurement) [![Total Downloads](https://poser.pugx.org/hazuki3417/php-measurement/downloads)](//packagist.org/packages/hazuki3417/php-measurement) 
 
 <!-- ![tag](https://img.shields.io/github/v/tag/hazuki3417/php-measurement)  -->
-![build](https://img.shields.io/gitlab/pipeline/hazuki3417/php-measurement) ![last commit](https://img.shields.io/github/last-commit/hazuki3417/php-measurement) ![latest commit](https://img.shields.io/github/commits-since/hazuki3417/php-measurement/1.1.0) ![repo size](https://img.shields.io/github/repo-size/hazuki3417/php-measurement) ![code size](https://img.shields.io/github/languages/code-size/hazuki3417/php-measurement)
+![last commit](https://img.shields.io/github/last-commit/hazuki3417/php-measurement) ![latest commit](https://img.shields.io/github/commits-since/hazuki3417/php-measurement/1.1.0) ![repo size](https://img.shields.io/github/repo-size/hazuki3417/php-measurement) ![code size](https://img.shields.io/github/languages/code-size/hazuki3417/php-measurement)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fc91d1a54ca4689fb4e3/maintainability)](https://codeclimate.com/github/hazuki3417/php-measurement/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/fc91d1a54ca4689fb4e3/test_coverage)](https://codeclimate.com/github/hazuki3417/php-measurement/test_coverage)
 
@@ -107,7 +107,7 @@ Measurement results.
 | Row | description |
 | --- | --- |
 | process: ~ | Result value per time |
-| average | Average number of executions |
+| average: | Average number of executions |
 
 ```
 NOTE: The measurement results vary depending on the environment.
